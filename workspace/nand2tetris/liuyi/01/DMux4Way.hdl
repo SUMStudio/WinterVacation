@@ -17,4 +17,24 @@ CHIP DMux4Way {
 
     PARTS:
     // Put your code here:
+    //原始实现
+    /*Not(in=sel[0],out=not0);
+    Not(in=sel[1],out=not1);
+    And(a=in,b=not1,out=tem1);
+    And(a=in,b=sel[1],out=tem2);
+    And(a=tem1,b=not0,out=a);
+    And(a=tem1,b=sel[0],out=b);
+    And(a=tem2,b=not0,out=c);
+    And(a=tem2,b=sel[0],out=d);*/
+    //直接用DMUX重复
+    DMux(in=in,sel=sel[1],a=tem1, b=tem2);
+    DMux(in=tem1,sel=sel[0],a=a,b=b);
+    DMux(in=tem2,sel=sel[0],a=c,b=d);
+    
+
+
+    
+
+
+
 }
