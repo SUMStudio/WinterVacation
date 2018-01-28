@@ -11,17 +11,17 @@
 @0
 D=A
 @R2
-M=D
+M=D //R2清零
 (WHILE)
 @R1
-MD=M-1
+MD=M-1 //计数位减一
 @END
-D;JLT
+D;JLT  //处理被乘数为0的情况
 @R0
-D=M
+D=M    
 @R2
-M=D+M
+M=D+M  //结果位累加
 @WHILE
-D;JGT
+D;JGT  //跳转执行下一次累加
 @END
-0;JMP
+0;JMP  //程序结束
