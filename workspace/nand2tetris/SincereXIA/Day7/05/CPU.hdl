@@ -66,5 +66,4 @@ CHIP CPU {
     And(a=instruction[15], b=instruction[3], out=writeM);
     Mux16(a=ALUoutput, b=false, sel=false, out=outM);
     C16to15(in=Aout, out=addressM);
-    
 }
